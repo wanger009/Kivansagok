@@ -12,3 +12,10 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Wish {
+  id        Int      @id @default(autoincrement())
+  name      String?  @db.VarChar(255)
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+}
